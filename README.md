@@ -70,7 +70,6 @@
             else:
                 return None
     if __name__ == '__main__':
-
         sentences = ["我要吃苹果","今天真是好天气！","哈喽，我是PCL的高级工程师XXX，请多指教！"]
         direction = "zh-pt"
         res=Tongyan_Translate(sentences=sentences,direction=direction)
