@@ -49,3 +49,29 @@
 ### 性能
 ![add image](https://github.com/Hanlard/PCL-Tongyan/blob/main/bleus.png)
 
+### 服务调用
+    import requests
+    def Tongyan_Translate(sentences=None,direction=None,PyTorch_REST_API_URL = 'http://192.168.202.124:5000/predict'):
+        c_lgs=['中文(zh)','意大利语(it)','德语(de)','捷克语(cs)','荷兰语(nl)','葡萄牙语(pt)','印尼语(id)','保加利亚语(bg)','波斯尼亚(bs)',
+               '波斯尼亚(bs)','希腊语(el)','波斯语(fa)','克罗地亚语(hr)','匈牙利语(hu)','爱沙尼亚语(et)','希伯来语(he)',
+              '斯洛文尼亚(sl)','波兰语(pl)','土耳其语(tr)','乌尔都语(ur)']
+        lgs=['zh','it','de','cs','nl','pt','id','bg','bs','bs','el','fa','hr','hu','et','he','sl','pl','tr','ur']
+        src,tgt=direction.split("-")
+        if src not in lgs or tgt not in lgs:
+            print(f"参数<direction>请在下面集合中的语言按照xx-xx的格式输入: \n{','.join(c_lgs)}")
+            return None
+        else:
+            payload = {'data': [direction,sentences]}
+            # Submit the request.
+            r = requests.post(PyTorch_REST_API_URL, data=payload).json()
+            if r['success']:
+                translations=[sent for sent in enumerate(r['predictions'])]
+                return translations
+            else:
+                return None
+    if __name__ == '__main__':
+
+        sentences = ["我要吃苹果","今天真是好天气！","哈喽，我是PCL的高级工程师XXX，请多指教！"]
+        direction = "zh-pt"
+        res=Tongyan_Translate(sentences=sentences,direction=direction)
+        print(res)
