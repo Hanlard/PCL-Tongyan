@@ -30,6 +30,10 @@
     fairseq                       1.0.0a0+2fd9d8a     
     fastmoe                       0.2.0               
 
+### 数据来源
+    https://github.com/AI-HPC-Research-Team/AIPerf#head7
+    数据统计信息见Excel
+    
 ### 处理数据脚本
     bash sh_dir/process.sh
 
