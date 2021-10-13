@@ -33,8 +33,8 @@
 ### 处理数据脚本
     bash sh_dir/process.sh
 
-### 训练步骤
-    1. 按照官方说明安装fairseq和fastmoe （我是在nvcr.io/nvidia/pytorch:21.06-py3 docker环境下安装的）
+### 使用步骤
+    1. 按照官方说明安装fairseq和fastmoe （我是在nvcr.io/nvidia/pytorch:21.06-py3 docker环境下安装的，也可以bash sh_dir/Install_fair.sh进行安装）
     2. 将PCL-Tongyan目录下所有文件复制到 fairseq 安装目录下(要覆盖)
     3. 下载"丝路"数据集 https://git.pcl.ac.cn/PCMachineTranslation/PCMT/src/branch/master/datasets
     4. 处理数据（修改目录） bash sh_dir/process.sh
