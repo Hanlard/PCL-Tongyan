@@ -31,7 +31,7 @@
     fastmoe                       0.2.0               
 
 ### 数据来源
-    https://github.com/AI-HPC-Research-Team/AIPerf
+    https://git.pcl.ac.cn/PCMachineTranslation/PCMT
     数据统计信息见Excel
     
 ### 处理数据脚本
