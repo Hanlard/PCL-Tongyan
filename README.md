@@ -2,7 +2,7 @@
 鹏程-通言多语言机器翻译模型，单模型支持一带一路17种小语种和中文互译。通言模型是在M2M-100模型结构上进行改进的多语种机器翻译模型，通过参数复用和增量式训练，将模型参数从1.2B提升至13.2B，在一带一路多个小语种的翻译上大幅提升。使用动态回放的终身学习方法，通言模型可持续学习新的语种翻译，详见PTT。
 
 ## 模型结构
-![add image](https://github.com/Hanlard/PCL-Tongyan/blob/main/bleus.png)
+![add image](https://github.com/Hanlard/PCL-Tongyan/blob/main/model_strcture.png)
 ## 模型特性
     1.将M2M 1.2B模型增量式改进为混合专家版本
     2.增量式训练，减少计算消耗，符合当下“绿色-AI”。
