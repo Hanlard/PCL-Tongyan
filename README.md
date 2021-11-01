@@ -3,7 +3,7 @@
 PCL-tonglian is a multi-language machine translation model. The single model supports 17  minority languages translation with Chinese, it also supports translation between any two languages. PCL-Tongyan is a multilingual machine translation model improved on the structure of M2M-100 model. Through parameter reusing and incremental training, the model parameters are increased from 1.2B to 13.2B, which greatly improves the translation performance of multiple minority languages. We use a lifelong learning approach based on dynamic playback, PCL-Tongyan can continuously learn new language translation without forgetting old languages. More details are given in the PPT.
 
 
-## Features
+## 1. Features
 
 1. The M2M-1.2B model was incrementally improved to a MOE version
 2. Incremental training is used to reduce computational consumption, in line with the concept of "green-AI"
@@ -13,19 +13,19 @@ PCL-tonglian is a multi-language machine translation model. The single model sup
 6. Based on FairseQ and FastMOe, fast to train and easy to deploy
 7. Using a single V100 graphics card for inference, without inter-card communication, greatly improving the inference speed.
 
-## Model structure
+## 2. Model structure
 ![add image](https://github.com/Hanlard/PCL-Tongyan/blob/main/model_strcture.png)
 
-## Data source
+## 3. Data source
  https://git.pcl.ac.cn/PCMachineTranslation/PCMT/src/branch/master/datasets
  
 -- See Excel for data statistics
     
-## Incremental training principle
+## 4. Incremental training principle
 ![add image](https://github.com/Hanlard/PCL-Tongyan/blob/main/incre_training_en.png)
 
 
-## Training steps
+## 5. Training steps
     
 1. According to the official instructions install fairseq and fastmoe (We use NVCR. IO/nvidia/pytorch: 21.06 py3 docker environment installation, also can bash sh_dir/Install_fair.sh for installation)
 2. Copy all files from pcl-tongyan directory to fairseq installation directory (overwrite)
@@ -38,13 +38,13 @@ PCL-tonglian is a multi-language machine translation model. The single model sup
 7. Start incremental MOE training 
     sh_dir/train-16MOe-silu-inhert.sh
 
-## Single V100 inference step (32G video memory is required)
+## 6. Single V100 inference step (32G video memory is required)
 1. Convert the distributed MOE model to a single-card deployment
     uer_dir/Comerge_16To1.py
 2.  Test bleu on xx->zh/h->xx
     sh_dir/Test-16Moe-multi-silu.sh
 
-## Function command
+## 7. Function command
 1. Switch from normal model to MOE model
     python Change_1.2B_To_16Moe_Version.py
 
@@ -60,7 +60,7 @@ PCL-tonglian is a multi-language machine translation model. The single model sup
 5. Data processing
     bash sh_dir/process.sh
     
-## Service Invocation API
+## 8. Service Invocation API
     import requests
     def Tongyan_Translate(sentences=None,direction=None,PyTorch_REST_API_URL = 'http://192.168.202.124:5000/predict'):
         c_lgs=['中文(zh)','意大利语(it)','德语(de)','捷克语(cs)','荷兰语(nl)','葡萄牙语(pt)','印尼语(id)','保加利亚语(bg)','波斯尼亚(bs)',
@@ -90,12 +90,12 @@ PCL-tonglian is a multi-language machine translation model. The single model sup
         res=Tongyan_Translate(sentences=sentences,direction=direction)
         print(res)   
         
-## Environments
+## 9. Environments
     fairseq                       1.0.0a0+2fd9d8a     
     fastmoe                       0.2.0               
     
 
-## Model performance
+## 10. Model performance
 ### Multilingual machine translation performance
 ![add image](https://github.com/Hanlard/PCL-Tongyan/blob/main/bleus_en.png)
 ### Lifelong learning performance
