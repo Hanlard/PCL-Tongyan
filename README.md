@@ -28,17 +28,12 @@
     2. xx->zh/h->xx 测试bleu sh_dir/Test-16Moe-multi-silu.sh
 
 ## 功能指令
-#### 普通模型 转 MOE模型
-    python Change_1.2B_To_16Moe_Version.py
-#### 分布式MOE模型 转 单卡存储
-    python Comerge_16To1.py
-#### 多语言微调
-    bash sh_dir/Train-16moe-SiLu-Inhert.sh 16 GShardGate 2
-#### 测试 xx-zh/zh-xx翻译结果
-    bash sh_dir/Test-16Moe-multi-silu.sh 0 xx
-#### 处理数据脚本
-    bash sh_dir/process.sh
-#### 服务调用API
+    普通模型 转 MOE模型 python Change_1.2B_To_16Moe_Version.py
+    分布式MOE模型转单卡存储 python Comerge_16To1.py
+    多语言微调 bash sh_dir/Train-16moe-SiLu-Inhert.sh 16 GShardGate 2
+    测试 xx-zh/zh-xx翻译结果 bash sh_dir/Test-16Moe-multi-silu.sh 0 xx
+    处理数据脚本 bash sh_dir/process.sh
+## 服务调用API
     import requests
     def Tongyan_Translate(sentences=None,direction=None,PyTorch_REST_API_URL = 'http://192.168.202.124:5000/predict'):
         c_lgs=['中文(zh)','意大利语(it)','德语(de)','捷克语(cs)','荷兰语(nl)','葡萄牙语(pt)','印尼语(id)','保加利亚语(bg)','波斯尼亚(bs)',
