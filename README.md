@@ -11,7 +11,9 @@
     5.多卡多专家，16张V100显卡进行数据与专家混合并行，提升资源利用效率
     6.模型基于fairseq和fastmoe实现，训练快速且部署简易
     7.单卡多专家，无需卡间通讯，大幅提升推断速度   
-
+    
+## 增量式训练原理
+![add image](https://github.com/Hanlard/PCL-Tongyan/blob/main/incre_training.png)
 ## 数据来源
     https://git.pcl.ac.cn/PCMachineTranslation/PCMT/src/branch/master/datasets
     数据统计信息见Excel
