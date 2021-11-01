@@ -96,9 +96,9 @@ PCL-tonglian is a multi-language machine translation model. The single model sup
     
 
 ## 10. Model performance
-### Multilingual machine translation performance
+### 10.1 Multilingual machine translation performance
 ![add image](https://github.com/Hanlard/PCL-Tongyan/blob/main/bleus_en.png)
-### Lifelong learning performance
+### 10.2 Lifelong learning performance
 ![add image](https://github.com/Hanlard/PCL-Tongyan/blob/main/lll_pic_en.png)
 
 
