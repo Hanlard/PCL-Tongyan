@@ -76,9 +76,9 @@
     fastmoe                       0.2.0               
     
 ## 模型性能
-#### 多语言机器翻译
+### 多语言机器翻译
 ![add image](https://github.com/Hanlard/PCL-Tongyan/blob/main/bleus.png)
-#### 持续学习性能
+### 持续学习性能
 ![add image](https://github.com/Hanlard/PCL-Tongyan/blob/main/lll_pic.png)
 
 
