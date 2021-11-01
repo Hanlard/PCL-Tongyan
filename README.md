@@ -9,13 +9,13 @@
     5.模型基于fairseq和fastmoe实现，训练快速且部署简易
     6.单卡多专家，无需卡间通讯，大幅提升推断速度   
 
-### 普通模型 转 MOE模型
+#### 普通模型 转 MOE模型
     python Change_1.2B_To_16Moe_Version.py
 
-### 分布式MOE模型 转 单卡存储
+#### 分布式MOE模型 转 单卡存储
     python Comerge_16To1.py
 
-### 多语言微调
+#### 多语言微调
     bash sh_dir/Train-16moe-SiLu-Inhert.sh 16 GShardGate 2
 
 ### 测试 xx-zh/zh-xx翻译结果
